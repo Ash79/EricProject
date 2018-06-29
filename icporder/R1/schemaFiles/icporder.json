@@ -1,0 +1,1 @@
+{"type":"object","properties":{"orderId":{"type":"integer","format":"int32"},"customerName":{"type":"string","format":""},"icpVersion":{"type":"string","format":""},"vCPUs":{"type":"integer","format":"int32"},"customerPhoneNumber":{"type":"string","format":""}},"required":["orderId","customerName","icpVersion","vCPUs","customerPhoneNumber"]}

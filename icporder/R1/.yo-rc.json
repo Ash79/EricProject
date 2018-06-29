@@ -1,0 +1,389 @@
+{
+  "generator-cedrus-api": {
+    "haveConfigFile": true,
+    "discover": {
+      "ask": false,
+      "apiConsumes": [
+        "application/json"
+      ],
+      "apiProduces": [
+        "application/json"
+      ]
+    },
+    "detail": {
+      "ask": false,
+      "isPublic": true,
+      "httpMethods": [
+        "get",
+        "put",
+        "post",
+        "patch",
+        "delete"
+      ],
+      "httpStatusCodes": [
+        "204",
+        "404",
+        "500"
+      ],
+      "versioning": {
+        "enabled": true,
+        "type": "uri",
+        "versionNumber": [
+          "v1"
+        ],
+        "uriOrder": "resourceFirst",
+        "contentTypeOrder": "resourceFirst",
+        "customHeaderName": "resourceFirst"
+      },
+      "apiData": {
+        "returnDataType": "No"
+      },
+      "records": {
+        "limit": 10
+      },
+      "cache": {
+        "RedisEnable": false,
+        "RedisHost": "pub-redis-19334.dal-05.1.sl.garantiadata.com",
+        "RedisPort": "19334",
+        "RedisPassword": "zKvyYzznhsdvYwgq",
+        "RedisExpire": 180
+      },
+      "pagination": {
+        "PaginationEnable": true
+      },
+      "filter": {
+        "FilterEnable": false
+      },
+      "unitTesting": {
+        "UnitTestingEnable": true,
+        "testingTypes": [
+          "unitTesting",
+          "pactTesting"
+        ]
+      },
+      "security": {
+        "enabled": false,
+        "type": "none"
+      },
+      "logging": {
+        "enabled": false
+      }
+    },
+    "deploy": {
+      "ask": false,
+      "apiApplicationType": "nodejs",
+      "openWhisk": {
+        "OpenWhiskEnable": false
+      },
+      "tls": {
+        "TLSEnable": false
+      },
+      "cloudFoundry": {
+        "appName": "",
+        "appMemory": "",
+        "revisionName": "R1"
+      },
+      "docker": {
+        "cwd": "TempSystem/cedrus12062018125259/EricProject/icporder/R1",
+        "publicIP": "localhost",
+        "revisionName": "R1"
+      },
+      "javaOptions": {
+        "basePackage": "io.cedrus.apigen",
+        "packagingType": "war",
+        "dependencyManagementType": "maven",
+        "framework": [
+          "jaxrs",
+          "jaxrs"
+        ],
+        "springBootDeployment": null
+      }
+    },
+    "multipleResources": {
+      "enabled": true,
+      "resources": [
+        {
+          "resourceName": "icporder",
+          "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"orderId\":{\"type\":\"integer\",\"format\":\"int32\"},\"customerName\":{\"type\":\"string\",\"format\":\"\"},\"icpVersion\":{\"type\":\"string\",\"format\":\"\"},\"vCPUs\":{\"type\":\"integer\",\"format\":\"int32\"},\"customerPhoneNumber\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"orderId\",\"customerName\",\"icpVersion\",\"vCPUs\",\"customerPhoneNumber\"]}",
+          "isPublic": true,
+          "httpMethods": [
+            "get",
+            "put",
+            "post",
+            "patch",
+            "delete"
+          ],
+          "httpStatusCodes": [
+            "204",
+            "404",
+            "500"
+          ],
+          "requireTestDataType": "Test Data",
+          "apiFakerMappingFileProvided": true,
+          "apiFakerMappingFileLocation": {
+            "type": "object",
+            "properties": {
+              "orderId": {
+                "type": "integer",
+                "faker": "random.number"
+              },
+              "customerName": {
+                "type": "string",
+                "faker": "name.findName"
+              },
+              "icpVersion": {
+                "type": "string",
+                "enum": [
+                  "1.2",
+                  "2.1",
+                  "3.1"
+                ]
+              },
+              "vCPUs": {
+                "type": "integer",
+                "minimum": 2,
+                "maximum": 100
+              },
+              "customerPhoneNumber": {
+                "type": "string",
+                "faker": "phone.phoneNumber"
+              }
+            },
+            "required": [
+              "orderId",
+              "customerName",
+              "icpVersion",
+              "vCPUs",
+              "customerPhoneNumber"
+            ]
+          },
+          "apiFakerMappingJsonType": "Data Schema",
+          "recordsLimit": "5",
+          "requireQuery": false,
+          "whichParameter": null,
+          "queryParameters": {
+            "get": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "put": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "post": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "patch": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "delete": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ]
+          },
+          "uniqueParameter": "orderId",
+          "fake_data": null
+        }
+      ]
+    },
+    "caller_type": "ui",
+    "javaOptions": {
+      "basePackage": "io.cedrus.apigen",
+      "packagingType": "war",
+      "dependencyManagementType": "maven",
+      "framework": [
+        "jaxrs",
+        "jaxrs"
+      ],
+      "springBootDeployment": null
+    },
+    "apiOverview": {
+      "apiName": "icporder",
+      "apiBasePath": "/api",
+      "apiDescription": "This is sample API being generated by cedrus-api generator"
+    },
+    "dataInput": {
+      "dataInputType": "JSON Input"
+    },
+    "JSONExtraction": [
+      {
+        "resourceName": "icporder",
+        "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"orderId\":{\"type\":\"integer\",\"format\":\"int32\"},\"customerName\":{\"type\":\"string\",\"format\":\"\"},\"icpVersion\":{\"type\":\"string\",\"format\":\"\"},\"vCPUs\":{\"type\":\"integer\",\"format\":\"int32\"},\"customerPhoneNumber\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"orderId\",\"customerName\",\"icpVersion\",\"vCPUs\",\"customerPhoneNumber\"]}",
+        "isPublic": true,
+        "httpMethods": [
+          "get",
+          "put",
+          "post",
+          "patch",
+          "delete"
+        ],
+        "httpStatusCodes": [
+          "204",
+          "404",
+          "500"
+        ],
+        "requireTestDataType": "Test Data",
+        "apiFakerMappingFileProvided": true,
+        "apiFakerMappingFileLocation": {
+          "type": "object",
+          "properties": {
+            "orderId": {
+              "type": "integer",
+              "faker": "random.number"
+            },
+            "customerName": {
+              "type": "string",
+              "faker": "name.findName"
+            },
+            "icpVersion": {
+              "type": "string",
+              "enum": [
+                "1.2",
+                "2.1",
+                "3.1"
+              ]
+            },
+            "vCPUs": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 100
+            },
+            "customerPhoneNumber": {
+              "type": "string",
+              "faker": "phone.phoneNumber"
+            }
+          },
+          "required": [
+            "orderId",
+            "customerName",
+            "icpVersion",
+            "vCPUs",
+            "customerPhoneNumber"
+          ]
+        },
+        "apiFakerMappingJsonType": "Data Schema",
+        "recordsLimit": "5",
+        "requireQuery": false,
+        "whichParameter": null,
+        "queryParameters": {
+          "get": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "put": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "post": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "patch": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "delete": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ]
+        },
+        "uniqueParameter": "orderId",
+        "fake_data": null,
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "orderId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "customerName": {
+              "type": "string",
+              "format": ""
+            },
+            "icpVersion": {
+              "type": "string",
+              "format": ""
+            },
+            "vCPUs": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "customerPhoneNumber": {
+              "type": "string",
+              "format": ""
+            }
+          },
+          "required": [
+            "orderId",
+            "customerName",
+            "icpVersion",
+            "vCPUs",
+            "customerPhoneNumber"
+          ]
+        }
+      }
+    ]
+  }
+}
